@@ -1,0 +1,120 @@
+body {
+  text-align: center;
+  background-color: #283149;
+}
+
+h1 {
+  font-size: 5rem;
+  color: #DBEDF3;
+  font-family: "Arvo", cursive;
+  text-shadow: 3px 0 #DA0463;
+
+}
+
+footer {
+  color: #DBEDF3;
+  font-family: sans-serif;
+}
+
+.w, .a, .s, .d, .j, .k, .l {
+  display: block;  /* Makes buttons stack vertically */
+  margin: 10px auto;  /* Adds vertical spacing between buttons and centers horizontally */
+}
+
+/* Add this to the container/parent element that holds the buttons */
+.set {
+  padding: 0;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;  /* Centers buttons vertically */
+  align-items: center;      /* Centers buttons horizontally */
+  margin-top: 0;
+}
+
+.w {
+  background-image: url("images/tom1.png");
+}
+
+.a {
+  background-image: url("images/tom2.png");
+}
+
+.s {
+  background-image: url("images/tom3.png");
+}
+
+.d {
+  background-image: url("images/tom4.png");
+}
+
+.j {
+  background-image: url("images/snare.png");
+}
+
+.k {
+  background-image: url("images/kick.png");
+}
+
+.l {
+  background-image: url("images/crash.png");
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+  transition: all 0.1s ease-out;  /* Faster transition */
+  color: white !important;  /* Override the default color */
+  text-shadow: 3px 0 #666; /* Darker shadow for better visibility */
+}
+
+.red {
+  color: red;
+}
+
+body .set button.drum {
+  outline: none;
+  border: 10px solid #404B69;
+  font-size: 4rem;
+  font-family: 'Arvo', cursive;
+  line-height: 1;
+  font-weight: 900;
+  color: #DA0463;
+  text-shadow: 3px 0 #DBEDF3;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: calc((100vh - 200px) / 7);
+  margin: 5px;
+  background-color: transparent;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+  transition: color 0.1s ease-out;
+}
+
+body .set button.drum.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+  color: white !important;
+  text-shadow: 3px 0 #666;
+  transition: all 0.1s ease-out;
+}
+
+#title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 2px;
+  width: 100%;
+  text-align: center;
+}
