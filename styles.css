@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: 3rem;
   color: #DBEDF3;
   font-family: "Arvo", cursive;
   text-shadow: 3px 0 #DA0463;
@@ -24,11 +24,12 @@ footer {
 /* Add this to the container/parent element that holds the buttons */
 .set {
   padding: 0;
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;  /* Centers buttons vertically */
-  align-items: center;      /* Centers buttons horizontally */
-  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);  /* Creates 2 equal columns */
+  gap: 10px;  /* Space between buttons */
+  max-width: 800px;  /* Optional: maximum width of the grid */
+  margin: 0 auto;  /* Centers the grid */
+  padding: 20px;
 }
 
 .w {
@@ -127,4 +128,17 @@ body .set button.drum.pressed {
     -ms-user-select: none;       /* Internet Explorer/Edge */
     user-select: none;           /* Non-prefixed version */
     touch-action: manipulation;  /* Disable double-tap zooming */
+}
+
+.drum {
+    aspect-ratio: 1;  /* Makes buttons square */
+    width: 100%;  /* Takes full width of grid cell */
+    margin: 0;  /* Removes any default margins */
+}
+
+/* If you have 7 buttons, the last row will have special handling */
+.drum:last-child {
+    grid-column: 1 / -1;  /* Makes the last button span both columns */
+    max-width: 50%;  /* Makes it half the width of the grid */
+    margin: 0 auto;  /* Centers it */
 }
