@@ -1,7 +1,14 @@
-// Detecting Button Press
+// Detecting Button Press, Click, or Touch
 document.querySelectorAll(".drum").forEach(drum => {
     drum.addEventListener("click", function() {
-        let buttonInnerHTML = this.innerHTML;
+        let buttonInnerHTML = this.innerHTML.charAt(0);
+        makeSound(buttonInnerHTML);
+        buttonAnimation(buttonInnerHTML);
+    });
+
+    drum.addEventListener("touchstart", function(e) {
+        e.preventDefault(); // Prevent default touch behavior
+        let buttonInnerHTML = this.innerHTML.charAt(0);
         makeSound(buttonInnerHTML);
         buttonAnimation(buttonInnerHTML);
     });
@@ -51,14 +58,16 @@ function makeSound(key) {
             break;
 
         default:
-            console.log(buttonInnerHTML);
+            console.log(key);
     }
 }
 
 function buttonAnimation(currentKey) {
     let activeButton = document.querySelector("." + currentKey);
-    activeButton.classList.add("pressed");
-    setTimeout(function() {
-        activeButton.classList.remove("pressed");
-    }, 100);
+    if (activeButton) {  // Add check to prevent null error
+        activeButton.classList.add("pressed");
+        setTimeout(function() {
+            activeButton.classList.remove("pressed");
+        }, 100);
+    }
 }
