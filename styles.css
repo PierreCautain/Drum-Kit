@@ -12,20 +12,20 @@ h1 {
 }
 
 footer {
-  color: #DBEDF3;
+  color: #5e6061;
   font-family: sans-serif;
-}
-
-.w, .a, .s, .d, .j, .k, .l {
-  display: block;  /* Makes buttons stack vertically */
-  margin: 10px auto;  /* Adds vertical spacing between buttons and centers horizontally */
+  margin-top: 10px;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 10px;
 }
 
 /* Add this to the container/parent element that holds the buttons */
 .set {
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);  /* Creates 2 equal columns */
+  justify-content: center;
   gap: 10px;  /* Space between buttons */
   max-width: 800px;  /* Optional: maximum width of the grid */
   margin: 0 auto;  /* Centers the grid */
@@ -60,6 +60,13 @@ footer {
   background-image: url("images/crash.png");
 }
 
+.w, .a, .s, .d, .j, .k, .l {
+  display: block;  /* Makes buttons stack vertically */
+  width: 50%;
+  margin: 0px auto;  /* Adds vertical spacing between buttons and centers horizontally */
+  margin-bottom: 10px;
+}
+
 .game-over {
   background-color: red;
   opacity: 0.8;
@@ -90,7 +97,7 @@ body .set button.drum {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 100%;
   height: calc((100vh - 200px) / 7);
   margin: 5px;
   background-color: transparent;
@@ -113,13 +120,6 @@ body .set button.drum.pressed {
   margin-bottom: 10px;
 }
 
-.footer {
-  position: fixed;
-  bottom: 2px;
-  width: 100%;
-  text-align: center;
-}
-
 * {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none;   /* Chrome/Safari/Opera */
@@ -131,14 +131,13 @@ body .set button.drum.pressed {
 }
 
 .drum {
-    aspect-ratio: 1;  /* Makes buttons square */
-    width: 100%;  /* Takes full width of grid cell */
-    margin: 0;  /* Removes any default margins */
+    aspect-ratio: 4;
+    width: 100%;
+    margin: 0;
 }
 
-/* If you have 7 buttons, the last row will have special handling */
 .drum:last-child {
-    grid-column: 1 / -1;  /* Makes the last button span both columns */
-    max-width: 50%;  /* Makes it half the width of the grid */
-    margin: 0 auto;  /* Centers it */
+    grid-column: 1 / -1;
+    width: 100%;
+    margin: 0 auto;
 }
